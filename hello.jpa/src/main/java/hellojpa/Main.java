@@ -14,7 +14,7 @@ public class Main {
 
 		EntityManager em = emf.createEntityManager();
 
-		EntityTransaction tx = em.getTransaction(); // jpa에 모든 활동은 트랜잭션안에서 된다
+		EntityTransaction tx = em.getTransaction(); // jpa에 모든 활동은 트랜잭션안에서 실행된다
 		tx.begin();
 		try {
 			Member member = new Member();
