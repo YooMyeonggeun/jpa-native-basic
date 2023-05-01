@@ -28,14 +28,16 @@ public class Main {
 			member.setTeam(team);
 			em.persist(member);
 			
+			em.flush();
+			em.clear();
+			
 			Member findMember = em.find(Member.class, member.getId());
+			
 //			Long teamId = findMember.getTeamId();
-//			
 //			Team findTeam = em.find(Team.class, teamId);
 			
 			Team findTeam = findMember.getTeam();
-			System.out.println("아이디 : "+findTeam.getId());
-			System.out.println("이름 : "+findTeam.getName());
+			findTeam.getName();
 			
 			
 			
