@@ -6,6 +6,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import entity.Member;
+import entity.MemberType;
 
 public class Main {
 	public static void main(String[] args) {
@@ -20,7 +21,7 @@ public class Main {
 			Member member = new Member();
 			member.setId(100L);
 			member.setName("hello");
-			member.setAge(10);
+			member.setMemberType(MemberType.USER);
 			em.persist(member);
 			tx.commit();
 		} catch (Exception e) {
