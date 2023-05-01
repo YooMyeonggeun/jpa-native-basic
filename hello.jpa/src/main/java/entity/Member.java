@@ -16,11 +16,15 @@ import lombok.Setter;
 @Setter
 public class Member {
 	
-	@Id
-	private Long id; @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue
+	private Long id; 
 	@Column(name="username")
 	private String name;
-	@Enumerated(EnumType.STRING)
-	private MemberType memberType;
+	
+	@Column(name="TEAM_ID")
+	private Long teamId;
+	
+//	@Enumerated(EnumType.STRING)
+//	private MemberType memberType;
 
 }
