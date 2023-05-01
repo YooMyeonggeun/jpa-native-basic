@@ -24,15 +24,19 @@ public class Main {
 			
 			Member member = new Member();
 			member.setName("hello");
-			member.setTeamId(team.getId());
+//			member.setTeamId(team.getId());
+			member.setTeam(team);
 			em.persist(member);
 			
 			Member findMember = em.find(Member.class, member.getId());
-			Long teamId = findMember.getTeamId();
+//			Long teamId = findMember.getTeamId();
+//			
+//			Team findTeam = em.find(Team.class, teamId);
 			
-			Team findTeam = em.find(Team.class, teamId);
+			Team findTeam = findMember.getTeam();
 			System.out.println("아이디 : "+findTeam.getId());
 			System.out.println("이름 : "+findTeam.getName());
+			
 			
 			
 			tx.commit();
