@@ -20,6 +20,7 @@ public class Main {
 			Member member = new Member();
 			member.setId(100L);
 			member.setName("hello");
+			member.setAge(10);
 			em.persist(member);
 			tx.commit();
 		} catch (Exception e) {
