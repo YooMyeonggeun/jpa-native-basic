@@ -26,25 +26,22 @@ public class Main {
 			
 			Member member = new Member();
 			member.setName("hello");
-//			member.setTeamId(team.getId());
-			member.setTeam(team);
+//			member.setTeam(team);
 			em.persist(member);
+//			team.getMembers().add(member);
+			member.setTeam(team);
 			
 			em.flush();
 			em.clear();
 			
-			Member findMember = em.find(Member.class, member.getId());
-			
-//			Long teamId = findMember.getTeamId();
-//			Team findTeam = em.find(Team.class, teamId);
-			
-			Team findTeam = findMember.getTeam();
-			findTeam.getName();
-			
-			List<Member> members = findTeam.getMembers();
-			for(Member member1 : members) {
-				System.out.println("member1 = "+ member1);
-			}
+//			Member findMember = em.find(Member.class, member.getId());
+//			Team findTeam = findMember.getTeam();
+//			findTeam.getName();
+//			
+//			List<Member> members = findTeam.getMembers();
+//			for(Member member1 : members) {
+//				System.out.println("member1 = "+ member1);
+//			}
 			
 			tx.commit();
 		} catch (Exception e) {
